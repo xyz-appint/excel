@@ -440,6 +440,7 @@ class Parser {
           var numFormat = _excel._numFormats.getByNumFmtId(numFmtId);
           if (numFormat == null) {
             // assert(false, 'missing numFmt for ${numFmtId}');
+
             numFormat = NumFormat.standard_0;
           }
 
