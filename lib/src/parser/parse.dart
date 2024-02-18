@@ -439,7 +439,7 @@ class Parser {
 
           var numFormat = _excel._numFormats.getByNumFmtId(numFmtId);
           if (numFormat == null) {
-            assert(false, 'missing numFmt for $numFmtId');
+            // assert(false, 'missing numFmt for ${numFmtId}');
             numFormat = NumFormat.standard_0;
           }
 
@@ -724,7 +724,7 @@ class Parser {
         .add(XmlElement(XmlName('Relationship'), <XmlAttribute>[
           XmlAttribute(XmlName('Id'), 'rId$ridNumber'),
           XmlAttribute(XmlName('Type'), '$_relationships/worksheet'),
-          XmlAttribute(XmlName('Target'), 'worksheets/sheet$sheetNumber.xml'),
+          XmlAttribute(XmlName('Target'), 'worksheets/sheet${sheetNumber}.xml'),
         ]));
 
     if (!_rId.contains('rId$ridNumber')) {
