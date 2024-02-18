@@ -623,8 +623,7 @@ class Parser {
             var numFmtId = _excel._numFmtIds[s];
             final numFormat = _excel._numFormats.getByNumFmtId(numFmtId);
             if (numFormat == null) {
-              assert(
-                  false, 'found no number format spec for numFmtId $numFmtId');
+              // assert(false, 'found no number format spec for numFmtId $numFmtId');
               value = NumFormat.defaultNumeric.read(v);
             } else {
               value = numFormat.read(v);
