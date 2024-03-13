@@ -626,7 +626,11 @@ class Parser {
               // assert(false, 'found no number format spec for numFmtId $numFmtId');
               value = NumFormat.defaultNumeric.read(v);
             } else {
-              value = numFormat.read(v);
+              try {
+                value = numFormat.read(v);
+              } catch (e) {
+                value = TextCellValue(v);
+              }
             }
           } else {
             final v = _parseValue(vNode);
